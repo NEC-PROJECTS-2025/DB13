@@ -1,0 +1,100 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block main %}
+<style>
+    /* Form Container */
+    form {
+        width: 80%;
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        border: 1px solid black;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Title or Heading */
+    h1 {
+        text-align: center;
+    }
+    
+    /* Message Section */
+    p {
+        font-size: 14px;
+        color: #d9534f;
+        text-align: center;
+    }
+    
+    /* Input Group Styling */
+    .inputGroup {
+        margin-bottom: 15px;
+    }
+    
+    label {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        display: block;
+        margin-bottom: 8px;
+    }
+    
+    input[type="file"] {
+        width: 95%;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14p
+    }   
+    .submitForm {
+        background-color: #209D9D;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto;
+        transition: background-color 0.3s ease;
+    }
+    
+    .submitForm:hover {
+        background-color: #45a049;
+    }
+    
+    /* Centering the form content */
+    .submitForm {
+        width: auto;
+    }     
+    .output{
+        color: #f2f2f2;
+        display: flex;
+        justify-content:center;
+        background-color: #ccc;
+        width: 300px;
+        padding: 20px;
+        border-radius: 5px;
+        border: 1px solid green;
+        font-size: 18px;
+        margin-left: 340px;
+        margin-top:-30px;
+    }
+</style>
+<form action="{% url 'prediction' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="inputGroup">
+            <label for="name">Test image </label>
+            <input type="file" id="name" name="file" placeholder="Enter Name" required style="cursor: pointer;">
+        </div>
+    <button class="submitForm" style="margin-left:200px">Predict</button>
+</form>
+<div>
+    {% if messages %}
+        {% for message in messages %}
+        <p class="output" style="color: #4CAF50;">predicted as : {{ message }}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+{% load static %}
+{% block main %}
+<style>
+    p,h6,li{
+        color: aliceblue;
+    }
+    body{
+        overflow: hidden;
+    }
+</style>
+<div class="container" style="height: 450px;padding-right:100px">
+    <p>The project titled "A Deep Learning Approach for Automated Weapon Detection" focuses on developing an intelligent system capable of identifying weapons in real-time using advanced deep learning techniques. The primary objective is to enhance public safety by enabling prompt responses to potential threats in various environments, such as public spaces, educational institutions, and secured facilities.</p>
+    <h6>Project Overview:</h6>
+
+    <ul>Data Collection and Preprocessing:
+        <li>Dataset Compilation: Gather a comprehensive dataset comprising images and videos containing various weapon types, including firearms and knives, as well as non-weapon images to ensure model robustness.</li>
+        <li>Annotation: Manually label the collected data to identify and localize weapons within the images, creating bounding boxes around the detected weapons.</li>
+        <li>Data Augmentation: Apply techniques such as rotation, scaling, and flipping to increase dataset diversity and improve model generalization.</li>
+    </ul>
+    <ul>Model Development:
+        <li>Architecture Selection: Utilize state-of-the-art object detection models like YOLOv5, YOLOv8, or Faster R-CNN, known for their balance between accuracy and real-time performance.</li>
+        <li>Transfer Learning: Employ pre-trained models on large datasets to leverage existing feature extraction capabilities, fine-tuning them on the weapon detection dataset to enhance performance.</li>
+        <li>Training: Train the model using the prepared dataset, optimizing hyperparameters to achieve high detection accuracy and minimizing false positives and negatives.</li>
+    </ul>
+    <ul>System Integration:
+        <li>Real-Time Processing: Implement the trained model into a real-time video surveillance system capable of processing live feeds and detecting weapons instantaneously.</li>
+        <li>Alert Mechanism: Develop an alert system that notifies security personnel upon weapon detection, providing details such as weapon type and location within the frame.</li>
+        <li>Scalability: Ensure the system can handle multiple video feeds simultaneously, maintaining performance across various scenarios and environments.</li>
+    </ul>
+    <ul>Evaluation and Testing:
+        <li>Performance Metrics: Assess the model using metrics like precision, recall, F1-score, and mean Average Precision (mAP) to evaluate detection accuracy.</li>
+        <li>Real-World Testing: Deploy the system in controlled environments to test its effectiveness in real-world scenarios, making necessary adjustments based on performance.</li>
+        <li>Continuous Improvement: Incorporate feedback and new data to retrain and enhance the model, adapting to emerging threats and reducing the likelihood of detection errors.</li>
+    </ul>
+</div>
+{% endblock %}

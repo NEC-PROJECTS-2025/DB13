@@ -1,0 +1,103 @@
+{% extends "index.html" %}
+{% load static %}
+{% block main %}
+<style>
+    table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+    }
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color:#209D9D;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    tr:hover {
+        background-color: #ddd;
+    }
+    caption {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    /* For Chrome, Edge, and Safari */
+</style>
+<div class="container" style="height:450px;padding-right:100px">
+    <!--
+    <h3>EXISTING MODEL</h3>
+    <div style="display: flex;">
+        <table>
+            <caption style="color: #ccc;">CALCULATION METRICS</caption>
+            <thead>
+                <tr>
+                    <th>{{algorithm1}}</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>accuracy</td>
+                    <td>{{accuracy1}}</td>
+                </tr>
+                <tr>
+                    <td>precision</td>
+                    <td>{{precision1}}</td>
+                </tr>
+                <tr>
+                    <td>recall</td>
+                    <td>{{recall1}}</td>
+                </tr>
+                <tr>
+                    <td>fscore</td>
+                    <td>{{fscore1}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div >
+            <img style="width:360px" src="{{image1}}"/>
+        </div>
+    </div>
+    -->
+    <h3>Proposed MODEL</h3>
+    <div style="display: flex; padding-bottom: 50px;">
+        <table>
+            <caption style="color: #ccc;">CALCULATION METRICS</caption>
+            <thead>
+                <tr>
+                    <th>{{algorithm}}</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>accuracy</td>
+                    <td>{{accuracy}}</td>
+                </tr>
+                <tr>
+                    <td>precision</td>
+                    <td>{{precision}}</td>
+                </tr>
+                <tr>
+                    <td>recall</td>
+                    <td>{{recall}}</td>
+                </tr>
+                <tr>
+                    <td>fscore</td>
+                    <td>{{fscore}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div >
+            <img style="width:360px" src="{{image}}"/>
+        </div>
+    </div>
+</div>
+{% endblock %}

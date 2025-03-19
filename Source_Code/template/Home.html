@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+{% load static %}
+{% block main %}
+<style>
+    h1{
+        color: aliceblue;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    img{
+        height: 300px;
+        margin-top: -10px;
+        width: 980px;
+    }
+</style>
+<div>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <img src="static/images/automated-weapon-detection-deep-learning-1060x651.jpg.webp"/>
+    <div>
+        <p style="color: aliceblue;margin-bottom:0px">Actuate’s AI gun detection software turns your existing security cameras into gun-detecting smart cameras, instantly detecting threats as soon as they emerge. With no hardware integrations required, Actuate saves money and saves lives</p>
+    </div>
+</div>
+{% endblock %}

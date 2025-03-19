@@ -1,0 +1,78 @@
+{% load static %}
+<html>
+<head>
+<title>Enhancing Hiring process through Block Chain</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'css/hiring.css' %}" rel="stylesheet" type="text/css" media="screen" />
+<style>
+  body {
+    overflow: hidden;
+  }
+  .container::-webkit-scrollbar {
+    width: 10px;
+  }
+  .container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .container::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  .container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  .container {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #363333;
+  }
+  .entry {
+    overflow-y: scroll;
+    height: 350px;
+    width: 1000px;
+  }
+  #logo img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px; /* Adjust size as needed */
+    height: auto;
+  }
+  #logo h1 {
+    margin-left: 100px; /* Offset text to avoid overlapping the logo */
+    font-size: 30px;
+    letter-spacing: 1.4px;
+    color: red;
+  }
+</style>
+</head>
+<body>
+<div id="wrapper">
+  <div id="header">
+    <div id="logo">
+      <img src="{% static 'images/images.png' %}" alt="Logo">
+      <h1>A Deep Learning Approach for Automated Weapon Detection</h1>
+      <marquee><font color="black" size=4>Team Members: 1.Pavan Dath  2. Rajavamshi 3. M.Venkatasai | Guide: K. Suresh Babu | Coordinator: D. Venkata Reddy</font></marquee>
+    </div>
+  </div>
+  <div id="menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="about">About</a></li>
+      <li><a href="prediction">Prediction</a></li>
+      <li><a href="modelevaluation">Model Evaluation</a></li>
+      <li><a href="chart">Project Flow Chart</a></li>
+    </ul>
+  </div>
+  <div id="page">
+    <div id="content">
+      <div class="post">
+        <div class="title">
+          <h2>Automated Weapon Detection</h2>
+        </div>
+        <div class="entry container">
+          {% block main %}{% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
